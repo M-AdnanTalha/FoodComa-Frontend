@@ -1,5 +1,7 @@
 import IconArrowRight from "../Components/Icons/ArrowRight";
 import PizzaImage from "../assets/Images/pizza2.png"
+import CookingImage from '../assets/Images/cooking1.png'
+import IconPatchCheck from "../Components/Icons/IconPathCheck";
 function Home(){
    return(
     <div>
@@ -34,6 +36,50 @@ function Home(){
                     width={550}
                     height={550}
                 />
+            </div>
+        </section>
+
+        {/* Services Section*/}
+        <section className="">
+            <div className="container flex flex-col md:flex-row">
+                <div className="flex flex-col items-center justify-center rounded-lg lg:w-1/2">
+                    <img src={CookingImage}
+                        width={550}
+                        className="rounded-lg"
+                        alt="Cooking"
+                    />
+                </div>
+                <div className="flex flex-col flex-wrap text-center lg:py-6 lg:w-1/2 lg:pl-12 lg:text-left">
+                    <div className="flex flex-col items-center lg:items-start">
+                        <div>
+                            <h2 className="mb-2 text-5xl font-extrabold text-transparent title-font bg-gradient-to-r from-orange-600 to-orange-300 bg-clip-text">
+                                Cooked by the best <br/> chefs in the world
+                            </h2>
+                            <p className="text-base leading-relaxed text-[#6B7280]">
+                                There are many benefits regarding to that but the main one are:
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="w-full p-1">
+                        <div className="flex items-center h-full p-2 text-2xl">
+                            <IconPatchCheck className="text-[#F38339] w-10 h-10 mr-4"/>
+                            <span className="font-bold title-font">Perfect Taste</span>
+                        </div>
+                    </div>
+                    <div className="w-full p-1">
+                        <div className="flex items-center h-full p-2 text-2xl">
+                            <IconPatchCheck className="text-[#F38339] w-10 h-10 mr-4"/>
+                            <span className="font-bold title-font">Food Hygeine Guaranteed</span>
+                        </div>
+                    </div>
+                    <div className="w-full p-1">
+                        <div className="flex items-center h-full p-2 text-2xl">
+                            <IconPatchCheck className="text-[#F38339] w-10 h-10 mr-4"/>
+                            <span className="font-bold title-font">Prepared Quickly</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
