@@ -1,8 +1,14 @@
 import { useState } from "react";
 import SignupPresentation from "./SignupPresentation";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Signup(){
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [signUpState , setSignUpState] = useState({
         firstName : '',
         email : '',
@@ -18,7 +24,7 @@ function Signup(){
         })
     }
 
-    function handleFormSubmit(e) {
+    async function handleFormSubmit(e) {
         e.preventDefault(); // prevent the form from reloading the page
         console.log(signUpState);
 
@@ -43,6 +49,12 @@ function Signup(){
         if(signUpState.mobileNumber.length < 10 || signUpState.mobileNumber.length > 12) {
             toast.error("Mobile number should be between 10-12 characters")
             return;
+        }
+
+        const apiReponse = await dispatch(createAccount(signUpState));
+        console.log("Api response", apiReponse);
+        if(apiReponse.payload.data.success) {
+            navigate('/auth/login');
         }
     }
 
