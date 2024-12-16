@@ -22,7 +22,7 @@ export const createAccount = createAsyncThunk('/auth/createAccount', async (data
         const apiResponse = await response;
         return apiResponse;
     } catch(error) {
-        console.log(error);
+        console.log(error); 
     }
 });
 

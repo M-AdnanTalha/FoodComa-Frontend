@@ -138,7 +138,7 @@ function Home(){
         </section>
 
         {/* Todo: Build the ui for showing all pizzas */}
-        {productsData.map((product) => <div key={product._id}>{product.productName}</div>)}
+        {productsData.map((product) => <div key={product._id}>{product.productName} </div>)}
 
         </div>
     </Layout>

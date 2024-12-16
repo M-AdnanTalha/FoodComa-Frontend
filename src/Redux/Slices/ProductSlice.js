@@ -3,7 +3,7 @@ import axiosInstance from "../../Helpers/axiosInstance";
 import toast from "react-hot-toast";
 
 const initialState = {
-    productsData: [], // Array of products
+    productsData:[] // Array of products
 }
 
 export const getAllProducts = createAsyncThunk('/products/getAll', async () => {
@@ -11,7 +11,7 @@ export const getAllProducts = createAsyncThunk('/products/getAll', async () => {
         const products = axiosInstance.get('/products');
         toast.promise(products, {
             loading: 'Loading all the products',
-            error: 'Something went cannot load products',
+            error: 'Something went wrong , cannot load products',
             success: 'Products loaded successfully',
         });
         const apiResponse = await products;
