@@ -22,6 +22,7 @@ function Layout({ children }) {
     async function fetchCartDetails() {
         const res = await dispatch(getCartDetails());
         if(res?.payload?.isUnauthorized) {
+            console.log("unauthorized");
             dispatch(logout());
         }
     }
